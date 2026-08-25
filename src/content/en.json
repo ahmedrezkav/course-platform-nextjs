@@ -1,0 +1,25 @@
+{
+  "brandName": "Vela",
+  "metadata": {
+    "description": "Learn with Vela — bilingual courses in English and Arabic."
+  },
+  "home": {
+    "intro": "A bilingual course platform for learning in English and Arabic.",
+    "courseCount": "{count, plural, one {# course in the catalog} other {# courses in the catalog}}"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "ar": "العربية"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "We couldn't load this page. You can try again.",
+    "retry": "Try again"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "That page doesn't exist on Vela.",
+    "home": "Back to home"
+  }
+}
