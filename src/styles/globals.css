@@ -27,6 +27,7 @@
   --color-border: var(--border);
   --color-primary: var(--primary);
   --color-ring: var(--ring);
+  /* Latin first, Arabic fallback so both scripts use IBM Plex. */
   --font-sans:
     var(--font-ibm-plex-sans), var(--font-ibm-plex-sans-arabic), ui-sans-serif, system-ui,
     sans-serif;

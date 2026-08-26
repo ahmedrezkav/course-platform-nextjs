@@ -8,6 +8,8 @@ import { useLocale, useTranslations } from "next-intl";
 export function LanguageSwitcher() {
   const t = useTranslations("languageSwitcher");
   const locale = useLocale();
+  // Unprefixed path (`/` not `/en`). Combined with `locale={code}` this
+  // keeps the page and only changes the prefix (and the locale cookie).
   const pathname = usePathname();
 
   return (

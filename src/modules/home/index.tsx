@@ -2,6 +2,7 @@ import { getCourses } from "@/api/courses";
 import { getTranslations } from "next-intl/server";
 
 export default async function Home() {
+  // Messages come from src/content/{locale}.json via getRequestConfig.
   const t = await getTranslations();
   const courses = await getCourses();
 

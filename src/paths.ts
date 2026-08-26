@@ -1,3 +1,5 @@
+// Locale-unprefixed helpers. Pair with `@/i18n/navigation` `Link`, which
+// adds `/en` or `/ar` from the active locale. Do not hardcode prefixes.
 export const paths = {
   home: () => "/",
   catalog: () => "/courses",

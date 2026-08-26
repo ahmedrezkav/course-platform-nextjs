@@ -21,6 +21,7 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   display: "swap",
 });
 
+// Prerender /en and /ar so Cache Components has a static locale shell.
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -37,6 +38,7 @@ export async function generateMetadata() {
 export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
   const { locale } = await params;
 
+  // `[locale]` matches any segment; reject unknown codes like `/xx`.
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -46,9 +48,11 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
       <body
         className={`${ibmPlexSans.variable} ${ibmPlexSansArabic.variable} min-h-full font-sans`}
       >
+        {/* Client provider is required for the switcher and error.tsx. */}
         <NextIntlClientProvider>
           <div className="flex p-4">
             <div className="ms-auto">
+              {/* usePathname is request-time; Suspense keeps the static shell. */}
               <Suspense fallback={<div className="h-8 w-36" aria-hidden />}>
                 <LanguageSwitcher />
               </Suspense>

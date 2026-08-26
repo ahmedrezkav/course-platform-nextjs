@@ -1,5 +1,6 @@
 export type Locale = "en" | "ar";
 
+// Course/lesson copy on records (src/data), not chrome strings in src/content.
 export type LocalizedString = Record<Locale, string>;
 
 export type LessonType = "video" | "article";
