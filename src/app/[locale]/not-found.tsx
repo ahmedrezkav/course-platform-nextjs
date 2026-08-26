@@ -1,6 +1,6 @@
-import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { paths } from "@/paths";
+import { getTranslations } from "next-intl/server";
 
 export default async function NotFound() {
   const t = await getTranslations("notFound");

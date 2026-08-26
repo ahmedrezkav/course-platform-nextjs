@@ -24,9 +24,7 @@ export default function Error({
       >
         {t("retry")}
       </button>
-      {error.digest ? (
-        <p className="mt-4 text-xs text-muted">{error.digest}</p>
-      ) : null}
+      {error.digest ? <p className="mt-4 text-xs text-muted">{error.digest}</p> : null}
     </main>
   );
 }

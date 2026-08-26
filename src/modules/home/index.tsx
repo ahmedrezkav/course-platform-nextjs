@@ -1,5 +1,5 @@
-import { getTranslations } from "next-intl/server";
 import { getCourses } from "@/api/courses";
+import { getTranslations } from "next-intl/server";
 
 export default async function Home() {
   const t = await getTranslations();

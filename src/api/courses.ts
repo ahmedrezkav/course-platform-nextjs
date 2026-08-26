@@ -1,6 +1,6 @@
-import { cacheLife } from "next/cache";
 import { courses } from "@/data/courses";
 import type { Course } from "@/data/types";
+import { cacheLife } from "next/cache";
 
 export async function getCourses(): Promise<Course[]> {
   "use cache";

@@ -1,12 +1,11 @@
-import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
-import { hasLocale } from "next-intl";
-import { NextIntlClientProvider } from "next-intl";
-import { getTranslations } from "next-intl/server";
-import { notFound } from "next/navigation";
-import { Suspense } from "react";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { routing } from "@/i18n/routing";
 import "@/styles/globals.css";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -35,10 +34,7 @@ export async function generateMetadata() {
   };
 }
 
-export default async function LocaleLayout({
-  children,
-  params,
-}: LayoutProps<"/[locale]">) {
+export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
@@ -46,17 +42,17 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html
-      lang={locale}
-      dir={locale === "ar" ? "rtl" : "ltr"}
-      className={`${ibmPlexSans.variable} ${ibmPlexSansArabic.variable} h-full antialiased`}
-    >
-      <body className="min-h-full font-sans">
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} className="h-full antialiased">
+      <body
+        className={`${ibmPlexSans.variable} ${ibmPlexSansArabic.variable} min-h-full font-sans`}
+      >
         <NextIntlClientProvider>
-          <div className="flex justify-end p-4">
-            <Suspense fallback={<div className="h-8 w-36" aria-hidden />}>
-              <LanguageSwitcher />
-            </Suspense>
+          <div className="flex p-4">
+            <div className="ms-auto">
+              <Suspense fallback={<div className="h-8 w-36" aria-hidden />}>
+                <LanguageSwitcher />
+              </Suspense>
+            </div>
           </div>
           {children}
         </NextIntlClientProvider>

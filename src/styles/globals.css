@@ -27,8 +27,9 @@
   --color-border: var(--border);
   --color-primary: var(--primary);
   --color-ring: var(--ring);
-  --font-sans: var(--font-ibm-plex-sans), var(--font-ibm-plex-sans-arabic),
-    ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    var(--font-ibm-plex-sans), var(--font-ibm-plex-sans-arabic), ui-sans-serif, system-ui,
+    sans-serif;
   --text-display: 2.25rem;
   --text-title: 1.5rem;
   --text-body: 1rem;

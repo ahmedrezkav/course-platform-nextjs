@@ -1,9 +1,9 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { cn } from "@/lib/cn";
 import { routing } from "@/i18n/routing";
+import { cn } from "@/lib/cn";
+import { useLocale, useTranslations } from "next-intl";
 
 export function LanguageSwitcher() {
   const t = useTranslations("languageSwitcher");

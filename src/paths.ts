@@ -2,8 +2,7 @@ export const paths = {
   home: () => "/",
   catalog: () => "/courses",
   course: (slug: string) => `/courses/${slug}`,
-  learn: (courseSlug: string, lessonSlug: string) =>
-    `/learn/${courseSlug}/${lessonSlug}`,
+  learn: (courseSlug: string, lessonSlug: string) => `/learn/${courseSlug}/${lessonSlug}`,
   dashboard: () => "/dashboard",
   signIn: () => "/sign-in",
   signUp: () => "/sign-up",
