@@ -27,10 +27,9 @@
   --color-border: var(--border);
   --color-primary: var(--primary);
   --color-ring: var(--ring);
-  /* Latin first, Arabic fallback so both scripts use IBM Plex. */
-  --font-sans:
-    var(--font-ibm-plex-sans), var(--font-ibm-plex-sans-arabic), ui-sans-serif, system-ui,
-    sans-serif;
+  /* Named families, not next/font variables: those embed a size-adjusted
+     fallback with unicode-range U+0–10FFFF that would steal Arabic glyphs. */
+  --font-sans: "IBM Plex Sans", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
   --text-display: 2.25rem;
   --text-title: 1.5rem;
   --text-body: 1rem;
@@ -44,5 +43,4 @@
 body {
   background: var(--canvas);
   color: var(--foreground);
-  font-family: var(--font-sans);
 }

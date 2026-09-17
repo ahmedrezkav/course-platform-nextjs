@@ -1,6 +1,7 @@
 export type Locale = "en" | "ar";
 
-// Course/lesson copy on records (src/data), not chrome strings in src/content.
+// Bilingual fields on course/lesson records: `{ en: "...", ar: "..." }`.
+// Buttons, errors, and other UI labels stay in `src/content/*.json`.
 export type LocalizedString = Record<Locale, string>;
 
 export type LessonType = "video" | "article";

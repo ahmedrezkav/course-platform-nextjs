@@ -1,25 +1,12 @@
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { routing } from "@/i18n/routing";
+import { cn } from "@/lib/cn";
+import { ibmPlexSans, ibmPlexSansArabic } from "@/lib/fonts";
 import "@/styles/globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex-sans",
-  display: "swap",
-});
-
-const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex-sans-arabic",
-  display: "swap",
-});
 
 // Prerender /en and /ar so Cache Components has a static locale shell.
 export function generateStaticParams() {
@@ -44,10 +31,16 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   }
 
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} className="h-full antialiased">
-      <body
-        className={`${ibmPlexSans.variable} ${ibmPlexSansArabic.variable} min-h-full font-sans`}
-      >
+    <html
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      className={cn(
+        ibmPlexSans.variable,
+        ibmPlexSansArabic.variable,
+        "h-full font-sans antialiased",
+      )}
+    >
+      <body className="min-h-full">
         {/* Client provider is required for the switcher and error.tsx. */}
         <NextIntlClientProvider>
           <div className="flex p-4">

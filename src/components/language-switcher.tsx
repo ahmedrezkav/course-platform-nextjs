@@ -8,8 +8,9 @@ import { useLocale, useTranslations } from "next-intl";
 export function LanguageSwitcher() {
   const t = useTranslations("languageSwitcher");
   const locale = useLocale();
-  // Unprefixed path (`/` not `/en`). Combined with `locale={code}` this
-  // keeps the page and only changes the prefix (and the locale cookie).
+  // next-intl strips `/en` or `/ar`, so this is the same page without a locale.
+  // `href={pathname}` + `locale={code}` rebuilds `/ar/...` from `/en/...` (and vice versa)
+  // and writes the locale cookie. Passing a prefixed pathname would nest locales (`/ar/en/...`).
   const pathname = usePathname();
 
   return (
