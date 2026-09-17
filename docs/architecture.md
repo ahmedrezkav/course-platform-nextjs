@@ -5,8 +5,9 @@ Vela is a student course platform. UI is English and Arabic; the brand name stay
 ## Layout
 
 - `src/app` — routes, layouts, and that segment’s `loading.tsx` / `error.tsx` / `not-found.tsx`. Feature UI does not live here. `[locale]/[...rest]` calls `notFound()` so unknown paths keep the locale layout.
+- `[locale]/layout.tsx` owns the app shell: skip link, header (wordmark, nav, language switcher, mobile menu), a single `<main id="main">`, and footer. Pages and recovery UI do not wrap another `<main>`.
 - `src/modules/<feature>` — page-level UI (Phase 1: `home` only).
-- `src/components` — shared widgets.
+- `src/components` — shared widgets (shell, language switcher). Radix Dialog is used only for the mobile nav.
 - `src/content` — UI copy (`en.json` / `ar.json`).
 - `src/data` — temporary in-memory store (bilingual course records).
 - `src/api` — the only data layer the UI may call.
