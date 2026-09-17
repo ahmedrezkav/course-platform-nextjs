@@ -12,6 +12,16 @@
     "en": "English",
     "ar": "العربية"
   },
+  "shell": {
+    "skipToContent": "تخطي إلى المحتوى",
+    "mainNav": "التنقل الرئيسي",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "menuDescription": "أقسام الموقع",
+    "home": "الصفحة الرئيسية",
+    "catalog": "الدورات",
+    "copyright": "© {year} Vela"
+  },
   "error": {
     "title": "حدث خطأ",
     "description": "تعذر تحميل هذه الصفحة. يمكنك المحاولة مرة أخرى.",

@@ -12,6 +12,16 @@
     "en": "English",
     "ar": "العربية"
   },
+  "shell": {
+    "skipToContent": "Skip to content",
+    "mainNav": "Main",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuDescription": "Site sections",
+    "home": "Home",
+    "catalog": "Courses",
+    "copyright": "© {year} Vela"
+  },
   "error": {
     "title": "Something went wrong",
     "description": "We couldn't load this page. You can try again.",
