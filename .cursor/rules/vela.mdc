@@ -11,8 +11,14 @@ Course platform learning project. Brand is **Vela** in English and Arabic. Never
 
 - One roadmap phase per request ([docs/roadmap.md](docs/roadmap.md)). Stop when that phase is done.
 - No automated tests.
-- Do not `git push` unless asked.
 - After an important phase: a short note in `docs/` and comments only on non-obvious code.
+
+## Git
+
+- `master` is the integrated app (last finished phase).
+- For each phase: branch `feat/phase-0N-<slug>` from current `master` (not from the previous phase branch once that phase is on `master`).
+- Commit on the phase branch (small commits by concern, same as Phase 1). Merge into `master` when the phase is done.
+- Do not `git push` unless asked.
 
 ## Architecture
 
