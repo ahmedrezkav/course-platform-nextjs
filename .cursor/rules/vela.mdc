@@ -17,7 +17,7 @@ Student course platform. Brand is **Vela** in English and Arabic — never trans
 
 - `master` is the integrated app (last finished phase).
 - For each phase: branch `feat/phase-0N-<slug>` from current `master`, not from a previous phase branch once that phase is on `master`.
-- Commit on the phase branch (small commits by concern). Merge into `master` when the phase is done.
+- Commit during the phase after each finished concern (data/API, route + UI, loading/error/empty, copy). Do not wait to be asked, and do not checkpoint a broken tree. Docs are a late commit. Merge into `master` when the phase is done.
 - Do not `git push` unless asked.
 
 ## Architecture
