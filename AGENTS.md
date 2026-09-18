@@ -17,7 +17,7 @@ Student course platform. Brand name is **Vela** in English and Arabic — do not
 - Implement **one roadmap phase per request**. See [docs/roadmap.md](docs/roadmap.md).
 - Do not add tests. Do not push until asked.
 - Loading, error, empty, and pending UI ship in the **same phase** as the feature.
-- Git: branch `feat/phase-0N-<slug>` from `master`. Commit after each finished concern without waiting to be asked; merge into `master` when the phase is done. Do not stack a new phase on the previous phase branch after `master` has caught up.
+- Git: never commit on `master`. Branch `feat/phase-0N-<slug>` (or `chore/<slug>` for docs/rules) from `master`. Commit after each finished concern without waiting to be asked; merge into `master` when the work is done. Do not stack a new phase on the previous phase branch after `master` has caught up.
 
 ## Conventions
 
