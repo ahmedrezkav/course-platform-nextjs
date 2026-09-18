@@ -26,7 +26,7 @@ export function LanguageSwitcher() {
             aria-current={isCurrent ? "page" : undefined}
             className={cn(
               "rounded-sm px-2 py-1 text-sm",
-              isCurrent ? "font-semibold text-foreground" : "text-muted",
+              isCurrent ? "font-semibold text-foreground" : "text-muted hover:text-foreground",
             )}
           >
             {t(code)}

@@ -1,9 +1,19 @@
 "use client";
 
-import { primaryNavItems } from "@/components/nav-items";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
+import { primaryNavItems } from "@/lib/nav-items";
+import { paths } from "@/paths";
 import { useTranslations } from "next-intl";
+
+function isCurrentPath(pathname: string, href: string) {
+  // `/` is a prefix of every path, so home is exact-only.
+  if (href === paths.home()) {
+    return pathname === href;
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function PrimaryNav({
   className,
@@ -18,7 +28,7 @@ export function PrimaryNav({
   return (
     <ul className={className}>
       {primaryNavItems.map((item) => {
-        const isCurrent = item.isCurrent(pathname);
+        const isCurrent = isCurrentPath(pathname, item.href);
 
         return (
           <li key={item.href}>
@@ -28,7 +38,7 @@ export function PrimaryNav({
               onClick={onNavigate}
               className={cn(
                 "inline-block rounded-sm px-2 py-1 text-sm",
-                isCurrent ? "font-semibold text-foreground" : "text-muted",
+                isCurrent ? "font-semibold text-foreground" : "text-muted hover:text-foreground",
               )}
             >
               {t(item.labelKey)}

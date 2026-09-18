@@ -15,12 +15,16 @@
   "shell": {
     "skipToContent": "Skip to content",
     "mainNav": "Main",
+    "footerNav": "Footer",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "menuDescription": "Site sections",
     "home": "Home",
     "catalog": "Courses",
     "copyright": "© {year} Vela"
+  },
+  "loading": {
+    "label": "Loading"
   },
   "error": {
     "title": "Something went wrong",

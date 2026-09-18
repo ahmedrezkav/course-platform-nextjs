@@ -1,6 +1,6 @@
-import { HeaderTools } from "@/components/header-tools";
-import { Wordmark } from "@/components/wordmark";
 import { Suspense } from "react";
+import { HeaderTools } from "./header-tools";
+import { Wordmark } from "./wordmark";
 
 export function SiteHeader() {
   return (

@@ -1,13 +1,24 @@
 "use client";
 
-import { PrimaryNav } from "@/components/primary-nav";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { PrimaryNav } from "./primary-nav";
 
 export function MobileNav() {
   const t = useTranslations("shell");
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    // md:hidden only hides the panel; close so the focus trap does not stay active.
+    const media = window.matchMedia("(min-width: 768px)");
+    function onChange() {
+      if (media.matches) setOpen(false);
+    }
+
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -18,11 +29,14 @@ export function MobileNav() {
         <MenuIcon />
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-[100] bg-foreground/40 md:hidden" />
-        <Dialog.Content className="bg-canvas border-border fixed inset-y-0 start-0 z-[100] flex h-full w-full max-w-sm flex-col border-e p-4 md:hidden">
+        <Dialog.Overlay className="fixed inset-0 z-100 bg-foreground/40 md:hidden" />
+        <Dialog.Content className="bg-canvas border-border fixed inset-s-0 inset-y-0 z-100 flex h-full w-full max-w-sm flex-col border-e p-4 md:hidden">
           <Dialog.Title className="text-lg font-semibold">{t("mainNav")}</Dialog.Title>
           <Dialog.Description className="sr-only">{t("menuDescription")}</Dialog.Description>
-          <Dialog.Close className="absolute end-3 top-3 rounded-sm p-2" aria-label={t("closeMenu")}>
+          <Dialog.Close
+            className="absolute inset-e-3 top-3 rounded-sm p-2"
+            aria-label={t("closeMenu")}
+          >
             <CloseIcon />
           </Dialog.Close>
           <nav aria-label={t("mainNav")} className="mt-8">

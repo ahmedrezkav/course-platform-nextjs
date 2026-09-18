@@ -1,9 +1,9 @@
 "use client";
 
-import { LanguageSwitcher } from "@/components/language-switcher";
-import { MobileNav } from "@/components/mobile-nav";
-import { PrimaryNav } from "@/components/primary-nav";
 import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "./language-switcher";
+import { MobileNav } from "./mobile-nav";
+import { PrimaryNav } from "./primary-nav";
 
 export function HeaderTools() {
   const t = useTranslations("shell");

@@ -15,12 +15,16 @@
   "shell": {
     "skipToContent": "تخطي إلى المحتوى",
     "mainNav": "التنقل الرئيسي",
+    "footerNav": "تذييل الصفحة",
     "openMenu": "فتح القائمة",
     "closeMenu": "إغلاق القائمة",
     "menuDescription": "أقسام الموقع",
     "home": "الصفحة الرئيسية",
     "catalog": "الدورات",
     "copyright": "© {year} Vela"
+  },
+  "loading": {
+    "label": "جاري التحميل"
   },
   "error": {
     "title": "حدث خطأ",
