@@ -24,7 +24,9 @@ Student course platform. Brand name is **Vela** in English and Arabic — do not
 Full rules: [`.cursor/rules/vela.mdc`](.cursor/rules/vela.mdc).
 
 - `src/app` is routing only. Feature UI lives in `src/modules/<feature>/`.
-- Server Components by default. Client components only for real interactivity.
+- Shared UI: a composite widget owns a folder; a single widget stays a file. Shared link lists live in `src/lib/`, not under `components`.
+- Server Components by default. `"use client"` only on the file that uses client APIs. Client children do not force the parent to be a Client Component.
 - UI talks to `src/api/*` only. `src/data/*` is a temporary store.
-- Routes go through `src/paths.ts`. Copy lives in `src/content/`.
+- Routes go through `src/paths.ts` (no raw path strings in nav). Copy lives in `src/content/`.
+- Logical CSS and Tailwind canonical classes. Skip link is a hash `<a href="#main">` onto `<main tabIndex={-1}>`.
 - Read `node_modules/next/dist/docs/` before using Next.js APIs (this is Next 16).

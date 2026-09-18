@@ -5,35 +5,42 @@ alwaysApply: true
 
 # Vela
 
-Course platform learning project. Brand is **Vela** in English and Arabic. Never translate or replace the name (not منارة, not a localized wordmark). `brandName` is `"Vela"` in both locale files.
+Student course platform. Brand is **Vela** in English and Arabic — never translate, transliterate, or replace it. `brandName` is `"Vela"` in every locale file.
 
 ## Workflow
 
 - One roadmap phase per request ([docs/roadmap.md](docs/roadmap.md)). Stop when that phase is done.
 - No automated tests.
-- After an important phase: a short note in `docs/` and comments only on non-obvious code.
+- After an important phase: a short note in `docs/`. Comments only on non-obvious code.
 
 ## Git
 
 - `master` is the integrated app (last finished phase).
-- For each phase: branch `feat/phase-0N-<slug>` from current `master` (not from the previous phase branch once that phase is on `master`).
-- Commit on the phase branch (small commits by concern, same as Phase 1). Merge into `master` when the phase is done.
+- For each phase: branch `feat/phase-0N-<slug>` from current `master`, not from a previous phase branch once that phase is on `master`.
+- Commit on the phase branch (small commits by concern). Merge into `master` when the phase is done.
 - Do not `git push` unless asked.
 
 ## Architecture
 
 - `src/app` — routes, layouts, and that segment’s `loading.tsx` / `error.tsx` / `not-found.tsx` only.
 - `src/modules/<feature>/index.tsx` — feature UI.
-- `src/components` — shared UI. Radix primitives for complex widgets; semantic HTML + Tailwind otherwise. Not shadcn, not Radix Themes.
+- `src/components` — shared UI. A composite widget owns a folder; a single widget stays a file. Radix primitives for complex widgets; semantic HTML + Tailwind otherwise. Not shadcn, not Radix Themes.
+- Shared link lists live in `src/lib/` (href + label key), not as components. Header, footer, and other consumers import the same list.
 - `src/api` — only UI-facing data layer. `src/data` is a temporary in-memory/JSON store.
-- `src/content` — UI strings. Course records stay in `src/data` (bilingual fields).
-- `src/paths.ts` — locale-unprefixed path helpers. Use next-intl `Link`.
+- `src/content` — UI strings. Domain records stay in `src/data` (bilingual fields).
+- `src/paths.ts` — locale-unprefixed path helpers. Use next-intl `Link`. Nav `href`s come from `paths`, never raw path strings. Current-page matching lives in the nav UI, not on the item list.
 
 ## Rendering and UX
 
-- Server Components by default. Client components only for language switcher, mobile nav, forms, video player, and similar interactivity.
-- When a route, fetch, or mutation can pend or fail, ship `loading.tsx` / `error.tsx` / `not-found.tsx`, pending submit, and empty states in the **same phase**. Do not defer them to polish.
-- `lang` and `dir` on `<html>`. Tailwind logical properties (`ps`/`pe`, `ms`/`me`, `start`/`end`).
+- Server Components by default. `"use client"` only on the file that uses client APIs. A Server Component may render Client children. Wrap client trees that read the current URL or other request data in `Suspense`.
+- `async` only when the component `await`s.
+- One `getTranslations()` per component when mixing root and nested keys.
+- When a route, fetch, or mutation can pend or fail, ship `loading.tsx` / `error.tsx` / `not-found.tsx`, pending submit, and empty states in the **same phase**.
+- Loading skeletons: `role="status"` with sr-only copy; `aria-hidden` only on decorative bars.
+- In-page jumps use a native `<a href="#…">`, not next-intl `Link`. Skip target is `<main id="main" tabIndex={-1}>` so focus can move without adding main to the tab order; `outline-none` avoids a page-sized ring; `scroll-mt-*` clears sticky chrome.
+- Distinct landmark names for header vs footer navigation.
+- Mixed-direction strings (copyright, codes, the brand name) use `dir="ltr"` so they do not reorder under `dir="rtl"`.
+- `lang` and `dir` on `<html>`. Logical CSS: `ps`/`pe`, `ms`/`me`, `inset-s-*`/`inset-e-*` (not physical `left`/`right` or positioning `start-*`/`end-*`). Prefer Tailwind canonical classes (`z-100` not `z-[100]`).
 
 ## Next.js 16
 
@@ -41,6 +48,7 @@ Read `node_modules/next/dist/docs/` before writing Next.js code. Prefer `proxy.t
 
 ## Do not
 
-- Collect card PANs on our origin (demo checkout only).
+- Collect real payment card data on this origin (checkout is demo-only).
 - Add Redux, React Query, shadcn, a CMS, or a mock REST server for demonstration.
 - Edit the Next.js-managed block in `AGENTS.md`.
+- Leave unused starter or boilerplate assets.
