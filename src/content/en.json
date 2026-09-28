@@ -4,8 +4,18 @@
     "description": "Learn with Vela — bilingual courses in English and Arabic."
   },
   "home": {
-    "intro": "A bilingual course platform for learning in English and Arabic.",
-    "courseCount": "{count, plural, one {# course in the catalog} other {# courses in the catalog}}"
+    "headline": "Learn in English and Arabic.",
+    "intro": "Start with a featured course, or browse the full catalog.",
+    "browseCourses": "Browse courses",
+    "featuredHeading": "Featured courses",
+    "featuredEmpty": "Nothing is featured right now. Browse the catalog to see every course.",
+    "free": "Free",
+    "taughtBy": "Taught by {name}",
+    "level": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
   },
   "languageSwitcher": {
     "label": "Language",
