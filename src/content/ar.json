@@ -24,6 +24,20 @@
       "data": "البيانات",
       "design": "التصميم",
       "engineering": "الهندسة"
+    },
+    "backToCatalog": "كل الدورات",
+    "syllabus": "المنهج",
+    "syllabusEmpty": "لا توجد دروس في هذه الدورة بعد.",
+    "lessonCount": "{count, plural, zero {لا توجد دروس} one {درس واحد} two {درسان} few {# دروس} many {# درس} other {# درس}}",
+    "duration": "{minutes, plural, zero {# دقيقة} one {دقيقة واحدة} two {دقيقتان} few {# دقائق} many {# دقيقة} other {# دقيقة}}",
+    "type": {
+      "video": "فيديو",
+      "article": "مقال"
+    },
+    "notFound": {
+      "title": "الدورة غير موجودة",
+      "description": "هذه الدورة غير موجودة على Vela.",
+      "catalog": "تصفّح الدورات"
     }
   },
   "catalog": {

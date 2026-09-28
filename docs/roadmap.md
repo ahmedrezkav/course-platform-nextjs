@@ -10,7 +10,7 @@ Implement **one phase per request**. Loading, error, empty, and pending UI ship 
 | 2 App shell     | Header, footer, skip link, responsive nav, Vela wordmark — [detailed plan](phase-02-app-shell.md)                                           |
 | 3 Home          | Marketing landing, featured courses, home `loading.tsx` / `error.tsx` — [detailed plan](phase-03-home.md)                                   |
 | 4 Catalog       | Listing, URL filters, empty/no-results, `loading.tsx` / `error.tsx` — [detailed plan](phase-04-catalog.md)                                  |
-| 5 Course detail | Syllabus, metadata, JSON-LD, `loading.tsx` / `error.tsx` / `not-found`                                                                      |
+| 5 Course detail | Syllabus, metadata, JSON-LD, `loading.tsx` / `error.tsx` / `not-found` — [detailed plan](phase-05-course-detail.md)                         |
 | 6 Auth          | Simulated session, proxy guards, accessible forms with pending/errors                                                                       |
 | 7 Enrollment    | Free enroll, My learning dashboard, dashboard loading/error/empty                                                                           |
 | 8 Demo payments | Checkout session, success/cancel, no real charges or card fields                                                                            |
