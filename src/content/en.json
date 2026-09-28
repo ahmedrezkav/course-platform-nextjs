@@ -24,6 +24,20 @@
       "data": "Data",
       "design": "Design",
       "engineering": "Engineering"
+    },
+    "backToCatalog": "All courses",
+    "syllabus": "Syllabus",
+    "syllabusEmpty": "This course has no lessons yet.",
+    "lessonCount": "{count, plural, one {# lesson} other {# lessons}}",
+    "duration": "{minutes, plural, one {# minute} other {# minutes}}",
+    "type": {
+      "video": "Video",
+      "article": "Article"
+    },
+    "notFound": {
+      "title": "Course not found",
+      "description": "That course doesn't exist on Vela.",
+      "catalog": "Browse courses"
     }
   },
   "catalog": {
