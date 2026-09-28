@@ -33,13 +33,19 @@ export type CourseModule = {
   lessons: Lesson[];
 };
 
-export type CourseLevel = "beginner" | "intermediate" | "advanced";
+export const courseLevels = ["beginner", "intermediate", "advanced"] as const;
+export type CourseLevel = (typeof courseLevels)[number];
+
+// Stable ids. Labels live in content (`course.category`) so a catalog
+// URL does not change when the locale changes.
+export const courseCategories = ["programming", "art", "data", "design", "engineering"] as const;
+export type CourseCategory = (typeof courseCategories)[number];
 
 export type Course = {
   slug: string;
   title: LocalizedString;
   description: LocalizedString;
-  category: LocalizedString;
+  category: CourseCategory;
   level: CourseLevel;
   price: number;
   featured: boolean;
