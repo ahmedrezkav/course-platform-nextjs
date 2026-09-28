@@ -8,14 +8,37 @@
     "intro": "Start with a featured course, or browse the full catalog.",
     "browseCourses": "Browse courses",
     "featuredHeading": "Featured courses",
-    "featuredEmpty": "Nothing is featured right now. Browse the catalog to see every course.",
+    "featuredEmpty": "Nothing is featured right now. Browse the catalog to see every course."
+  },
+  "course": {
     "free": "Free",
     "taughtBy": "Taught by {name}",
     "level": {
       "beginner": "Beginner",
       "intermediate": "Intermediate",
       "advanced": "Advanced"
+    },
+    "category": {
+      "programming": "Programming",
+      "art": "Art",
+      "data": "Data",
+      "design": "Design",
+      "engineering": "Engineering"
     }
+  },
+  "catalog": {
+    "title": "Courses",
+    "intro": "Filter by level, category, or price.",
+    "filtersLabel": "Filters",
+    "levelLabel": "Level",
+    "categoryLabel": "Category",
+    "priceLabel": "Price",
+    "all": "All",
+    "paid": "Paid",
+    "resultCount": "{count, plural, one {# course} other {# courses}}",
+    "empty": "No courses are listed yet.",
+    "noResults": "No courses match these filters.",
+    "clearFilters": "Clear filters"
   },
   "languageSwitcher": {
     "label": "Language",

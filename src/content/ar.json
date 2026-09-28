@@ -8,14 +8,37 @@
     "intro": "ابدأ بدورة مميزة، أو تصفّح الكتالوج كاملاً.",
     "browseCourses": "تصفّح الدورات",
     "featuredHeading": "دورات مميزة",
-    "featuredEmpty": "لا توجد دورات مميزة حالياً. تصفّح الكتالوج لرؤية كل الدورات.",
+    "featuredEmpty": "لا توجد دورات مميزة حالياً. تصفّح الكتالوج لرؤية كل الدورات."
+  },
+  "course": {
     "free": "مجاني",
     "taughtBy": "تقديم {name}",
     "level": {
       "beginner": "مبتدئ",
       "intermediate": "متوسط",
       "advanced": "متقدم"
+    },
+    "category": {
+      "programming": "البرمجة",
+      "art": "الفنون",
+      "data": "البيانات",
+      "design": "التصميم",
+      "engineering": "الهندسة"
     }
+  },
+  "catalog": {
+    "title": "الدورات",
+    "intro": "صفِّ حسب المستوى أو التصنيف أو السعر.",
+    "filtersLabel": "التصفية",
+    "levelLabel": "المستوى",
+    "categoryLabel": "التصنيف",
+    "priceLabel": "السعر",
+    "all": "الكل",
+    "paid": "مدفوع",
+    "resultCount": "{count, plural, zero {لا توجد دورات} one {دورة واحدة} two {دورتان} few {# دورات} many {# دورة} other {# دورة}}",
+    "empty": "لا توجد دورات في الكتالوج حالياً.",
+    "noResults": "لا توجد دورات تطابق هذه التصفية.",
+    "clearFilters": "مسح التصفية"
   },
   "languageSwitcher": {
     "label": "اللغة",

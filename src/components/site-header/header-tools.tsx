@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Suspense } from "react";
 import { LanguageSwitcher } from "./language-switcher";
 import { MobileNav } from "./mobile-nav";
 import { PrimaryNav } from "./primary-nav";
@@ -13,7 +14,10 @@ export function HeaderTools() {
       <nav aria-label={t("mainNav")} className="hidden md:block">
         <PrimaryNav className="flex gap-1" />
       </nav>
-      <LanguageSwitcher />
+      {/* useSearchParams always suspends. Keep it off the nav so those links stay in the static shell. */}
+      <Suspense fallback={<div className="h-8 w-36" aria-hidden />}>
+        <LanguageSwitcher />
+      </Suspense>
       <MobileNav />
     </div>
   );
