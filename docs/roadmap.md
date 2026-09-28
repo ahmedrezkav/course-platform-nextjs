@@ -8,7 +8,7 @@ Implement **one phase per request**. Loading, error, empty, and pending UI ship 
 | ----- | ----- |
 | 1 Foundation | `src/` layout, Next 16 config, i18n/RTL, tokens, `paths.ts`, data/API boundary, agent rules, docs — [detailed plan](phase-01-foundation.md) |
 | 2 App shell | Header, footer, skip link, responsive nav, Vela wordmark — [detailed plan](phase-02-app-shell.md) |
-| 3 Home | Marketing landing, featured courses, home `loading.tsx` / `error.tsx` |
+| 3 Home | Marketing landing, featured courses, home `loading.tsx` / `error.tsx` — [detailed plan](phase-03-home.md) |
 | 4 Catalog | Listing, URL filters, empty/no-results, `loading.tsx` / `error.tsx` |
 | 5 Course detail | Syllabus, metadata, JSON-LD, `loading.tsx` / `error.tsx` / `not-found` |
 | 6 Auth | Simulated session, proxy guards, accessible forms with pending/errors |

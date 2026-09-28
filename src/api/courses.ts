@@ -10,6 +10,14 @@ export async function getCourses(): Promise<Course[]> {
   return courses;
 }
 
+export async function getFeaturedCourses(): Promise<Course[]> {
+  "use cache";
+  cacheLife("hours");
+  // Catalog order, bilingual records. The page applies locale and labels
+  // so this cache entry does not vary by language.
+  return courses.filter((course) => course.featured);
+}
+
 export async function getCourseBySlug(slug: string): Promise<Course | null> {
   "use cache";
   cacheLife("hours");
