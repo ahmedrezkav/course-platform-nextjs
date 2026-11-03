@@ -12,7 +12,7 @@ Implement **one phase per request**. Loading, error, empty, and pending UI ship 
 | 4 Catalog       | Listing, URL filters, empty/no-results, `loading.tsx` / `error.tsx` — [detailed plan](phase-04-catalog.md)                                  |
 | 5 Course detail | Syllabus, metadata, JSON-LD, `loading.tsx` / `error.tsx` / `not-found` — [detailed plan](phase-05-course-detail.md)                         |
 | 6 Auth          | Simulated session, proxy guards, accessible forms with pending/errors — [detailed plan](phase-06-auth.md)                                    |
-| 7 Enrollment    | Free enroll, My learning dashboard, dashboard loading/error/empty                                                                           |
+| 7 Enrollment    | Free enroll, My learning dashboard, dashboard loading/error/empty — [detailed plan](phase-07-enrollment.md)                                  |
 | 8 Demo payments | Checkout session, success/cancel, no real charges or card fields                                                                            |
 | 9 Player        | HTML5 video + articles, progress, lesson loading/error/`not-found`                                                                          |
 | 10 Reviews      | List + submit with pending and inline errors                                                                                                |
