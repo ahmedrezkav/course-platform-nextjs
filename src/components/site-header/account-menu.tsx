@@ -49,16 +49,34 @@ export function AccountMenu({
     );
   }
 
+  const onDashboard = pathname === paths.dashboard();
+
   return (
-    <div className={cn("flex items-center gap-2", className)}>
-      <p className="max-w-48 truncate text-sm font-medium" dir="auto" translate="no" title={session.name}>
+    <nav aria-label={t("accountNav")} className={cn("flex items-center gap-2", className)}>
+      <Link
+        href={paths.dashboard()}
+        aria-current={onDashboard ? "page" : undefined}
+        onClick={onNavigate}
+        className={cn(
+          "rounded-sm px-2 py-1 text-sm",
+          onDashboard ? "font-semibold text-foreground" : "text-muted hover:text-foreground",
+        )}
+      >
+        {t("learning")}
+      </Link>
+      <p
+        className="max-w-48 truncate text-sm font-medium"
+        dir="auto"
+        translate="no"
+        title={session.name}
+      >
         {session.name}
       </p>
       <form action={signOut}>
         <input type="hidden" name="locale" value={locale} />
         <SignOutButton />
       </form>
-    </div>
+    </nav>
   );
 }
 
