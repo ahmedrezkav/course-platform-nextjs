@@ -1,11 +1,13 @@
 "use client";
 
+import type { SessionUser } from "@/lib/session-user";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { AccountMenu } from "./account-menu";
 import { PrimaryNav } from "./primary-nav";
 
-export function MobileNav() {
+export function MobileNav({ session }: { session: SessionUser | null }) {
   const t = useTranslations("shell");
   const [open, setOpen] = useState(false);
 
@@ -42,6 +44,11 @@ export function MobileNav() {
           <nav aria-label={t("mainNav")} className="mt-8">
             <PrimaryNav className="flex flex-col gap-1" onNavigate={() => setOpen(false)} />
           </nav>
+          <AccountMenu
+            session={session}
+            onNavigate={() => setOpen(false)}
+            className="mt-auto flex-col items-stretch gap-3 border-t border-border pt-4"
+          />
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
