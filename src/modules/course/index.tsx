@@ -3,6 +3,8 @@ import type { Course } from "@/data/types";
 import { Link } from "@/i18n/navigation";
 import { paths } from "@/paths";
 import { getFormatter, getLocale, getTranslations } from "next-intl/server";
+import { Suspense } from "react";
+import { EnrollFallback, EnrollSlot } from "./enroll";
 import { CourseJsonLd } from "./json-ld";
 
 export default async function CourseDetail({ course }: { course: Course }) {
@@ -59,6 +61,11 @@ export default async function CourseDetail({ course }: { course: Course }) {
             </span>
           )}
         </p>
+        {course.price === 0 ? (
+          <Suspense fallback={<EnrollFallback label={t("loading.label")} />}>
+            <EnrollSlot slug={course.slug} />
+          </Suspense>
+        ) : null}
       </article>
       <section className="mt-12 max-w-3xl" aria-labelledby="syllabus-heading">
         <h2 id="syllabus-heading" className="text-2xl font-semibold tracking-tight">

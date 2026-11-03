@@ -87,6 +87,18 @@
       "taken": "هذا البريد الإلكتروني مسجّل بالفعل."
     }
   },
+  "learning": {
+    "title": "تعلّمي",
+    "intro": "الدورات المجانية التي تلتحق بها تظهر هنا.",
+    "count": "{count, plural, zero {لا توجد دورات} one {دورة واحدة} two {دورتان} few {# دورات} many {# دورة} other {# دورة}}",
+    "empty": "لم تلتحق بأي دورة بعد.",
+    "browse": "تصفّح الدورات",
+    "enroll": "التحاق مجاني",
+    "enrollPending": "جارٍ الالتحاق",
+    "enrollSignIn": "تسجيل الدخول للالتحاق",
+    "enrolled": "تم الالتحاق بهذه الدورة.",
+    "dashboard": "عرض تعلّمي"
+  },
   "languageSwitcher": {
     "label": "اللغة",
     "en": "English",
@@ -104,6 +116,7 @@
     "signUp": "إنشاء حساب",
     "signOut": "تسجيل الخروج",
     "signOutPending": "جارٍ تسجيل الخروج",
+    "learning": "تعلّمي",
     "home": "الصفحة الرئيسية",
     "catalog": "الدورات",
     "copyright": "© {year} Vela"

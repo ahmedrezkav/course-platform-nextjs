@@ -14,8 +14,15 @@ export function isAuthPath(pathname: string) {
   return pathname === paths.signIn() || pathname === paths.signUp();
 }
 
-// `next` may only be a locale-unprefixed private path. Schemes, slashes, and
-// encodings are dropped so the query cannot redirect off this site.
+// A course page is a safe return after sign-in, so free enroll can send the
+// student back to the course they were viewing. It is not a private path.
+function isCoursePath(pathname: string) {
+  return /^\/courses\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(pathname);
+}
+
+// `next` may only be a locale-unprefixed private path or a course path.
+// Schemes, slashes, and encodings are dropped so the query cannot redirect
+// off this site.
 export function safeNextPath(value: unknown) {
   if (typeof value !== "string") return null;
   if (!value.startsWith("/") || value.startsWith("//")) return null;
@@ -23,7 +30,7 @@ export function safeNextPath(value: unknown) {
 
   const pathname = value.split(/[?#]/)[0] ?? "";
   if (!/^\/[A-Za-z0-9/_-]+$/.test(pathname)) return null;
-  if (!isPrivatePath(pathname)) return null;
+  if (!isPrivatePath(pathname) && !isCoursePath(pathname)) return null;
   return pathname;
 }
 
