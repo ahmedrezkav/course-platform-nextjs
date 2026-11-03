@@ -87,6 +87,18 @@
       "taken": "That email is already registered."
     }
   },
+  "learning": {
+    "title": "My learning",
+    "intro": "Free courses you enroll in show up here.",
+    "count": "{count, plural, one {# course} other {# courses}}",
+    "empty": "You haven't enrolled in a course yet.",
+    "browse": "Browse courses",
+    "enroll": "Enroll for free",
+    "enrollPending": "Enrolling",
+    "enrollSignIn": "Sign in to enroll",
+    "enrolled": "You're enrolled.",
+    "dashboard": "Go to My learning"
+  },
   "languageSwitcher": {
     "label": "Language",
     "en": "English",
@@ -104,6 +116,7 @@
     "signUp": "Create account",
     "signOut": "Sign out",
     "signOutPending": "Signing out",
+    "learning": "My learning",
     "home": "Home",
     "catalog": "Courses",
     "copyright": "© {year} Vela"
