@@ -54,6 +54,39 @@
     "noResults": "No courses match these filters.",
     "clearFilters": "Clear filters"
   },
+  "auth": {
+    "signIn": {
+      "title": "Sign in",
+      "description": "Sign in to your Vela account.",
+      "submit": "Sign in",
+      "pending": "Signing in",
+      "demo": "Demo student:",
+      "demoPassword": "Password:",
+      "createAccount": "Create an account"
+    },
+    "signUp": {
+      "title": "Create an account",
+      "description": "Create a simulated Vela account for this demo.",
+      "submit": "Create account",
+      "pending": "Creating account",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in"
+    },
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password"
+    },
+    "errors": {
+      "name": "Enter a name, 2 to 80 characters.",
+      "email": "Enter a valid email address.",
+      "password": "Use 8 to 72 characters.",
+      "confirm": "Those passwords don't match.",
+      "credentials": "That email or password doesn't match.",
+      "taken": "That email is already registered."
+    }
+  },
   "languageSwitcher": {
     "label": "Language",
     "en": "English",
@@ -66,6 +99,11 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "menuDescription": "Site sections",
+    "accountNav": "Account",
+    "signIn": "Sign in",
+    "signUp": "Create account",
+    "signOut": "Sign out",
+    "signOutPending": "Signing out",
     "home": "Home",
     "catalog": "Courses",
     "copyright": "© {year} Vela"
