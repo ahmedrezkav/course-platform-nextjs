@@ -94,7 +94,6 @@ export function ReviewForm({ slug }: { slug: string }) {
                   // Controlled so a finished action cannot clear what was chosen.
                   checked={rating === String(value)}
                   onChange={() => setRating(String(value))}
-                  className="scroll-mt-24"
                 />
                 {t("stars", { count: value })}
               </label>
@@ -123,7 +122,7 @@ export function ReviewForm({ slug }: { slug: string }) {
           aria-invalid={bodyError ? true : undefined}
           aria-describedby={bodyError ? "review-body-error" : undefined}
           className={cn(
-            "mt-1 w-full scroll-mt-24 rounded-sm border bg-canvas px-3 py-2",
+            "mt-1 w-full rounded-sm border bg-canvas px-3 py-2",
             bodyError ? "border-foreground" : "border-border",
           )}
         />

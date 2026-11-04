@@ -55,7 +55,7 @@ async function LearningList() {
 
   return (
     <>
-      <p className="mt-4 text-sm text-muted">{t("count", { count: courses.length })}</p>
+      <h2 className="mt-4 text-sm text-muted">{t("count", { count: courses.length })}</h2>
       <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {courses.map((course) => {
           const progress = progressByCourse.get(course.slug);
@@ -71,7 +71,7 @@ async function LearningList() {
                   {progress.resumeSlug ? (
                     <Link
                       href={paths.learn(course.slug, progress.resumeSlug)}
-                      className="mt-1 inline-block text-sm text-primary"
+                      className="mt-1 inline-block text-sm text-primary underline underline-offset-4"
                     >
                       {t("continue")}
                     </Link>

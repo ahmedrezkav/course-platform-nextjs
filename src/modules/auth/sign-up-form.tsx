@@ -90,7 +90,7 @@ export function SignUpForm({ next }: { next: string | null }) {
         {t("signUp.hasAccount")}{" "}
         <Link
           href={next ? { pathname: paths.signIn(), query: { next } } : paths.signIn()}
-          className="text-primary"
+          className="text-primary underline underline-offset-4"
         >
           {t("signUp.signIn")}
         </Link>

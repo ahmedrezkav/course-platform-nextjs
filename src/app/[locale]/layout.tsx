@@ -7,7 +7,17 @@ import { ibmPlexSans, ibmPlexSansArabic } from "@/lib/fonts";
 import "@/styles/globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import type { Viewport } from "next";
 import { notFound } from "next/navigation";
+
+// Same colors as --canvas. The browser chrome follows the page in both schemes.
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f4ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#101614" },
+  ],
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -43,7 +53,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
         <NextIntlClientProvider>
           <SkipLink />
           <SiteHeader />
-          <main id="main" tabIndex={-1} className="flex-1 scroll-mt-20 outline-none">
+          <main id="main" tabIndex={-1} className="flex-1 outline-none">
             {children}
           </main>
           <SiteFooter />

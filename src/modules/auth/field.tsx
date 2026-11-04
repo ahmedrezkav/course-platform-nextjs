@@ -74,7 +74,7 @@ export function AuthField({
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? errorId : undefined}
         className={cn(
-          "mt-1 w-full scroll-mt-24 rounded-sm border bg-canvas px-3 py-2",
+          "mt-1 w-full rounded-sm border bg-canvas px-3 py-2",
           error ? "border-foreground" : "border-border",
         )}
       />

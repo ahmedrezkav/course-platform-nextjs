@@ -18,7 +18,7 @@ export async function EnrolledActions({ slug }: { slug: string }) {
         </Link>
       ) : null}
       <div>
-        <Link href={paths.dashboard()} className="mt-2 inline-block text-sm text-primary">
+        <Link href={paths.dashboard()} className="mt-2 inline-block text-sm text-primary underline underline-offset-4">
           {t("dashboard")}
         </Link>
       </div>

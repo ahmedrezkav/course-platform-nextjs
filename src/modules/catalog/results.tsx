@@ -32,9 +32,9 @@ function FilterGroup<T extends string>({
 }) {
   return (
     <div>
-      <h2 id={id} className="text-sm font-medium">
+      <p id={id} className="text-sm font-medium">
         {label}
-      </h2>
+      </p>
       <ul aria-labelledby={id} className="mt-2 flex flex-wrap gap-2">
         {options.map((option) => {
           const isSelected = option.value === selected;
@@ -127,7 +127,7 @@ export async function CatalogResults({
               : t("catalog.resultCount", { count: matches.length })}
           </h2>
           {filtered ? (
-            <Link href={paths.catalog()} className="text-sm text-primary">
+            <Link href={paths.catalog()} className="text-sm text-primary underline underline-offset-4">
               {t("catalog.clearFilters")}
             </Link>
           ) : null}

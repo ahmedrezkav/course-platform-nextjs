@@ -33,7 +33,7 @@ export default async function CourseDetail({ course }: { course: Course }) {
         category={t(`course.category.${course.category}`)}
       />
       <article className="max-w-3xl">
-        <Link href={paths.catalog()} className="text-sm text-primary">
+        <Link href={paths.catalog()} className="text-sm text-primary underline underline-offset-4">
           {t("course.backToCatalog")}
         </Link>
         <div className="mt-6 flex items-center gap-3">
@@ -101,7 +101,7 @@ export default async function CourseDetail({ course }: { course: Course }) {
                         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                           <Link
                             href={paths.learn(course.slug, lesson.slug)}
-                            className="font-medium hover:text-primary"
+                            className="font-medium underline underline-offset-4 hover:text-primary"
                           >
                             {lesson.title[locale]}
                           </Link>
@@ -122,7 +122,7 @@ export default async function CourseDetail({ course }: { course: Course }) {
           </>
         )}
       </section>
-      <section id="reviews" aria-labelledby="reviews-heading" className="mt-12 max-w-3xl scroll-mt-24">
+      <section id="reviews" aria-labelledby="reviews-heading" className="mt-12 max-w-3xl">
         <h2 id="reviews-heading" className="text-2xl font-semibold tracking-tight">
           {t("reviews.title")}
         </h2>

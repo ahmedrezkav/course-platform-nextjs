@@ -21,7 +21,7 @@ export default async function Player({ course, entry }: { course: Course; entry:
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
-      <Link href={paths.course(course.slug)} className="text-sm text-primary">
+      <Link href={paths.course(course.slug)} className="text-sm text-primary underline underline-offset-4">
         {t("player.backToCourse")}
       </Link>
       <h1 className="mt-6 text-4xl font-semibold tracking-tight">{lesson.title[locale]}</h1>
@@ -146,7 +146,7 @@ function LessonPager({
       {previous ? (
         <Link
           href={paths.learn(course.slug, previous.lesson.slug)}
-          className="me-auto block max-w-xs hover:text-primary"
+          className="me-auto block max-w-xs underline underline-offset-4 hover:text-primary"
         >
           <span className="block text-sm text-muted">{previousLabel}</span>
           <span className="font-medium">{previous.lesson.title[locale]}</span>
@@ -155,7 +155,7 @@ function LessonPager({
       {next ? (
         <Link
           href={paths.learn(course.slug, next.lesson.slug)}
-          className="ms-auto block max-w-xs text-end hover:text-primary"
+          className="ms-auto block max-w-xs text-end underline underline-offset-4 hover:text-primary"
         >
           <span className="block text-sm text-muted">{nextLabel}</span>
           <span className="font-medium">{next.lesson.title[locale]}</span>
@@ -208,7 +208,7 @@ function LessonOutline({
                       ) : (
                         <Link
                           href={paths.learn(course.slug, lesson.slug)}
-                          className="font-medium hover:text-primary"
+                          className="font-medium underline underline-offset-4 hover:text-primary"
                         >
                           {lesson.title[locale]}
                         </Link>

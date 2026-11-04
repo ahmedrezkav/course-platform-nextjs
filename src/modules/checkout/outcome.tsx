@@ -122,7 +122,9 @@ async function OutcomeBody({
 function CourseTitle({ courseSlug, title }: { courseSlug: string; title: string }) {
   return (
     <p className="mt-6 text-2xl font-semibold tracking-tight">
-      <Link href={paths.course(courseSlug)}>{title}</Link>
+      <Link href={paths.course(courseSlug)} className="underline underline-offset-4 hover:text-primary">
+        {title}
+      </Link>
     </p>
   );
 }
