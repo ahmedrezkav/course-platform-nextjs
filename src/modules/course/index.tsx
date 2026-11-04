@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import { EnrollFallback, EnrollSlot } from "./enroll";
 import { CourseJsonLd } from "./json-ld";
 import { PurchaseFallback, PurchaseSlot } from "./purchase";
+import { ReviewsFallback, ReviewsSlot } from "./reviews";
 
 export default async function CourseDetail({ course }: { course: Course }) {
   const t = await getTranslations();
@@ -120,6 +121,15 @@ export default async function CourseDetail({ course }: { course: Course }) {
             </div>
           </>
         )}
+      </section>
+      <section id="reviews" aria-labelledby="reviews-heading" className="mt-12 max-w-3xl scroll-mt-24">
+        <h2 id="reviews-heading" className="text-2xl font-semibold tracking-tight">
+          {t("reviews.title")}
+        </h2>
+        {/* Rows and the session cookie are request-time. Suspense keeps the title. */}
+        <Suspense fallback={<ReviewsFallback label={t("loading.label")} />}>
+          <ReviewsSlot slug={course.slug} />
+        </Suspense>
       </section>
     </div>
   );
