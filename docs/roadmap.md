@@ -14,7 +14,7 @@ Implement **one phase per request**. Loading, error, empty, and pending UI ship 
 | 6 Auth          | Simulated session, proxy guards, accessible forms with pending/errors — [detailed plan](phase-06-auth.md)                                    |
 | 7 Enrollment    | Free enroll, My learning dashboard, dashboard loading/error/empty — [detailed plan](phase-07-enrollment.md)                                  |
 | 8 Demo payments | Checkout session, success/cancel, no real charges or card fields — [detailed plan](phase-08-demo-payments.md)                                 |
-| 9 Player        | HTML5 video + articles, progress, lesson loading/error/`not-found`                                                                          |
+| 9 Player        | HTML5 video + articles, progress, lesson loading/error/`not-found` — [detailed plan](phase-09-player.md)                                      |
 | 10 Reviews      | List + submit with pending and inline errors                                                                                                |
 | 11 Polish       | A11y/performance QA, leftover UX — not missing loading/error UI                                                                             |
 
