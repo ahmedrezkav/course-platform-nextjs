@@ -6,11 +6,11 @@ Vela is a student course platform. UI is English and Arabic; the brand name stay
 
 - `src/app` — routes, layouts, and that segment’s `loading.tsx` / `error.tsx` / `not-found.tsx`. Feature UI does not live here. `[locale]/[...rest]` calls `notFound()` so unknown paths keep the locale layout.
 - `[locale]/layout.tsx` owns the app shell: skip link, header (wordmark, nav, account, language switcher, mobile menu), a single `<main id="main">`, and footer. Pages and recovery UI do not wrap another `<main>`.
-- `src/modules/<feature>` — page-level UI. Home is the marketing landing: introduction, catalog link, and featured courses. The catalog at `/courses` lists every course and filters it from the URL. `/courses/[slug]` is one course: facts, syllabus, Course JSON-LD, free enroll, and demo checkout. `/sign-in` and `/sign-up` are the simulated account forms. `/dashboard` is My learning. `/checkout/[sessionId]`, `/checkout/success`, and `/checkout/cancel` are the demo purchase flow. `/learn/[courseSlug]/[lessonSlug]` is the lesson player.
+- `src/modules/<feature>` — page-level UI. Home is the marketing landing: introduction, catalog link, and featured courses. The catalog at `/courses` lists every course and filters it from the URL. `/courses/[slug]` is one course: facts, syllabus, Course JSON-LD, free enroll, demo checkout, and reviews. `/sign-in` and `/sign-up` are the simulated account forms. `/dashboard` is My learning. `/checkout/[sessionId]`, `/checkout/success`, and `/checkout/cancel` are the demo purchase flow. `/learn/[courseSlug]/[lessonSlug]` is the lesson player.
 - `src/components` — shared widgets. A parent owns a folder (`site-header/`); leaf widgets stay as files (`skip-link.tsx`, `site-footer.tsx`, `course-card.tsx`). Radix Dialog is used only for the mobile nav. Home, the catalog, and My learning render `CourseCard`.
 - `src/lib/nav-items.ts` — the public Home/Courses links shared by header and footer (not a component).
 - `src/content` — UI copy (`en.json` / `ar.json`).
-- `src/data` — temporary in-memory store (bilingual course records, the simulated student list, free enrollments, demo checkout sessions, and lesson completion).
+- `src/data` — temporary in-memory store (bilingual course records, the simulated student list, free enrollments, demo checkout sessions, lesson completion, and course reviews).
 - `src/api` — the only data layer the UI may call.
 - `src/paths.ts` — locale-unprefixed path helpers used with next-intl `Link`. Nav hrefs come from here; current-page matching lives in the nav UI.
 
@@ -41,3 +41,7 @@ A paid course (`price > 0`) offers demo checkout from the same kind of suspended
 ## Player
 
 `/learn/{courseSlug}/{lessonSlug}` plays one lesson for an enrolled student. The title, type, and duration come from the cached catalog and can prerender. The session cookie and completion rows are read under `<Suspense>`. A student who is not enrolled sees a short locked message; the video and the article body are not rendered. Video lessons use a native `<video>` element. Article bodies are text blocks, not HTML. `markLessonComplete` writes `{ userId, courseSlug, lessonSlug }` to `src/data/progress.ts`. Rows are process memory, not part of the cookie. Continue learning opens the first incomplete lesson, or the first lesson when every lesson is complete. The segment has its own loading, error, and not-found UI. An unknown course or lesson calls `notFound()`. Bare `/learn` still has no page.
+
+## Reviews
+
+The course page lists reviews under the syllabus. The heading can prerender. The list and the form read process memory and the session cookie inside `<Suspense>`. A signed-out student sees a sign-in link. A signed-in student who is not enrolled sees a short message and no form. An enrolled student submits one review. `submitReview` checks the rating and the text and returns field errors; a valid review is written to `src/data/reviews.ts` and the page opens again at `#reviews`. A second submit from the same student updates that row. Rows are process memory, not part of the cookie. Catalog cards and the course JSON-LD do not include them.
