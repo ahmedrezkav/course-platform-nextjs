@@ -2,7 +2,8 @@ import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 
 export const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  // 700 is unused. Shipping it would download another file per family.
+  weight: ["400", "500", "600"],
   variable: "--font-ibm-plex-sans",
   display: "swap",
   // Size-adjusted fallback uses unicode-range U+0–10FFFF and would paint
@@ -12,7 +13,7 @@ export const ibmPlexSans = IBM_Plex_Sans({
 
 export const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   variable: "--font-ibm-plex-sans-arabic",
   display: "swap",
 });

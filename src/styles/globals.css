@@ -4,9 +4,11 @@
   --canvas: #f6f4ef;
   --foreground: #14201c;
   --muted: #5b675f;
-  --border: #d5d8cf;
+  /* 3:1 against --canvas so an input, card, or chip edge stays visible. */
+  --border: #818983;
   --primary: #0f6e62;
   --ring: #0f6e62;
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,9 +16,10 @@
     --canvas: #101614;
     --foreground: #eef3ef;
     --muted: #9aa89e;
-    --border: #2c3833;
+    --border: #626b66;
     --primary: #4ec9b0;
     --ring: #4ec9b0;
+    color-scheme: dark;
   }
 }
 
@@ -35,9 +38,31 @@
   --text-body: 1rem;
 }
 
+html {
+  /* One offset for the sticky header. Per-element scroll-margin would add to this. */
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse {
+    animation: none;
+  }
+}
+
 :focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
+}
+
+/* Unlayered, so it wins over the rule above. The card draws the one ring. */
+.course-card a:focus-visible {
+  outline: none;
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: CanvasText;
+  }
 }
 
 body {

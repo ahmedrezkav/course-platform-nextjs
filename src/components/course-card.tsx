@@ -11,7 +11,7 @@ export async function CourseCard({ course }: { course: Course }) {
   const formatPrice = await getFormatter({ locale: "en" });
 
   return (
-    <article className="flex h-full flex-col rounded-sm border border-border p-5">
+    <article className="course-card relative flex h-full flex-col rounded-sm border border-border p-5 hover:border-primary has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-solid has-[:focus-visible]:outline-ring has-[:focus-visible]:outline-offset-2">
       <div className="flex items-center gap-3">
         <span className="grid size-10 shrink-0 place-items-center rounded-sm bg-primary/10 text-primary">
           <CourseIcon slug={course.slug} />
@@ -25,7 +25,11 @@ export async function CourseCard({ course }: { course: Course }) {
         </p>
       </div>
       <h3 className="mt-2 text-xl font-semibold tracking-tight">
-        <Link href={paths.course(course.slug)} className="hover:text-primary">
+        {/* The title covers the card. The description is not a second control. */}
+        <Link
+          href={paths.course(course.slug)}
+          className="underline underline-offset-4 hover:text-primary after:absolute after:inset-0 after:z-10"
+        >
           {course.title[locale]}
         </Link>
       </h3>

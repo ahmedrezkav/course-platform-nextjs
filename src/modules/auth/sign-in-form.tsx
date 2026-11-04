@@ -65,7 +65,7 @@ export function SignInForm({ next }: { next: string | null }) {
       <p className="mt-6 text-sm">
         <Link
           href={next ? { pathname: paths.signUp(), query: { next } } : paths.signUp()}
-          className="text-primary"
+          className="text-primary underline underline-offset-4"
         >
           {t("signIn.createAccount")}
         </Link>
