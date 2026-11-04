@@ -147,6 +147,27 @@
       "courses": "تصفّح الدورات"
     }
   },
+  "reviews": {
+    "title": "المراجعات",
+    "empty": "لا توجد مراجعات بعد.",
+    "count": "{count, plural, zero {لا توجد مراجعات} one {مراجعة واحدة} two {مراجعتان} few {# مراجعات} many {# مراجعة} other {# مراجعة}}",
+    "average": "{rating, number, ::.0} من {scale, number}",
+    "write": "اكتب مراجعة",
+    "ratingLabel": "التقييم",
+    "stars": "{count, plural, zero {# نجوم} one {نجمة واحدة} two {نجمتان} few {# نجوم} many {# نجمة} other {# نجمة}}",
+    "bodyLabel": "المراجعة",
+    "submit": "إرسال المراجعة",
+    "pending": "جارٍ الإرسال",
+    "signIn": "تسجيل الدخول لكتابة مراجعة",
+    "enroll": "التحق بهذه الدورة لكتابة مراجعة.",
+    "yours": "مراجعتك",
+    "errors": {
+      "rating": "اختر تقييماً من 1 إلى 5.",
+      "body": "اكتب 10 أحرف على الأقل.",
+      "bodyLong": "استخدم 500 حرفاً أو أقل.",
+      "enrolled": "التحق بهذه الدورة قبل مراجعتها."
+    }
+  },
   "languageSwitcher": {
     "label": "اللغة",
     "en": "English",

@@ -147,6 +147,27 @@
       "courses": "Browse courses"
     }
   },
+  "reviews": {
+    "title": "Reviews",
+    "empty": "No reviews yet.",
+    "count": "{count, plural, one {# review} other {# reviews}}",
+    "average": "{rating, number, ::.0} out of {scale, number}",
+    "write": "Write a review",
+    "ratingLabel": "Rating",
+    "stars": "{count, plural, one {# star} other {# stars}}",
+    "bodyLabel": "Review",
+    "submit": "Submit review",
+    "pending": "Submitting",
+    "signIn": "Sign in to review",
+    "enroll": "Enroll in this course to write a review.",
+    "yours": "Your review",
+    "errors": {
+      "rating": "Choose a rating from 1 to 5.",
+      "body": "Write at least 10 characters.",
+      "bodyLong": "Use 500 characters or fewer.",
+      "enrolled": "Enroll in this course before reviewing it."
+    }
+  },
   "languageSwitcher": {
     "label": "Language",
     "en": "English",
