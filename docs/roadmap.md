@@ -16,6 +16,6 @@ Implement **one phase per request**. Loading, error, empty, and pending UI ship 
 | 8 Demo payments | Checkout session, success/cancel, no real charges or card fields — [detailed plan](phase-08-demo-payments.md)                                 |
 | 9 Player        | HTML5 video + articles, progress, lesson loading/error/`not-found` — [detailed plan](phase-09-player.md)                                      |
 | 10 Reviews      | List + submit with pending and inline errors — [detailed plan](phase-10-reviews.md)                                                         |
-| 11 Polish       | A11y/performance QA, leftover UX — not missing loading/error UI                                                                             |
+| 11 Polish       | A11y/performance QA, leftover UX — not missing loading/error UI — [detailed plan](phase-11-polish.md)                                        |
 
 Out of scope for now: instructor CMS, live Stripe, real backend, tests.

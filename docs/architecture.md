@@ -45,3 +45,7 @@ A paid course (`price > 0`) offers demo checkout from the same kind of suspended
 ## Reviews
 
 The course page lists reviews under the syllabus. The heading can prerender. The list and the form read process memory and the session cookie inside `<Suspense>`. A signed-out student sees a sign-in link. A signed-in student who is not enrolled sees a short message and no form. An enrolled student submits one review. `submitReview` checks the rating and the text and returns field errors; a valid review is written to `src/data/reviews.ts` and the page opens again at `#reviews`. A second submit from the same student updates that row. Rows are process memory, not part of the cookie. Catalog cards and the course JSON-LD do not include them.
+
+## Polish
+
+Borders are at least 3:1 against the canvas in both schemes, so inputs, cards, and chips stay identifiable. `color-scheme` and the viewport `themeColor` follow the same light and dark canvas, including native video controls. `scroll-padding-top` on `html` clears the sticky header for focus and in-page hashes. Skeleton pulse stops when the user prefers reduced motion. In-content links are underlined. Header, footer, and account links stay in their navs. A course card is one link; the title covers the card. Catalog filter names are not headings. My learning’s course count is the heading between the page title and the cards. IBM Plex loads weights 400, 500, and 600.
