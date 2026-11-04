@@ -6,11 +6,11 @@ Vela is a student course platform. UI is English and Arabic; the brand name stay
 
 - `src/app` — routes, layouts, and that segment’s `loading.tsx` / `error.tsx` / `not-found.tsx`. Feature UI does not live here. `[locale]/[...rest]` calls `notFound()` so unknown paths keep the locale layout.
 - `[locale]/layout.tsx` owns the app shell: skip link, header (wordmark, nav, account, language switcher, mobile menu), a single `<main id="main">`, and footer. Pages and recovery UI do not wrap another `<main>`.
-- `src/modules/<feature>` — page-level UI. Home is the marketing landing: introduction, catalog link, and featured courses. The catalog at `/courses` lists every course and filters it from the URL. `/courses/[slug]` is one course: facts, syllabus, Course JSON-LD, and free enroll. `/sign-in` and `/sign-up` are the simulated account forms. `/dashboard` is My learning.
+- `src/modules/<feature>` — page-level UI. Home is the marketing landing: introduction, catalog link, and featured courses. The catalog at `/courses` lists every course and filters it from the URL. `/courses/[slug]` is one course: facts, syllabus, Course JSON-LD, free enroll, and demo checkout. `/sign-in` and `/sign-up` are the simulated account forms. `/dashboard` is My learning. `/checkout/[sessionId]`, `/checkout/success`, and `/checkout/cancel` are the demo purchase flow.
 - `src/components` — shared widgets. A parent owns a folder (`site-header/`); leaf widgets stay as files (`skip-link.tsx`, `site-footer.tsx`, `course-card.tsx`). Radix Dialog is used only for the mobile nav. Home, the catalog, and My learning render `CourseCard`.
 - `src/lib/nav-items.ts` — the public Home/Courses links shared by header and footer (not a component).
 - `src/content` — UI copy (`en.json` / `ar.json`).
-- `src/data` — temporary in-memory store (bilingual course records, the simulated student list, and free enrollments).
+- `src/data` — temporary in-memory store (bilingual course records, the simulated student list, free enrollments, and demo checkout sessions).
 - `src/api` — the only data layer the UI may call.
 - `src/paths.ts` — locale-unprefixed path helpers used with next-intl `Link`. Nav hrefs come from here; current-page matching lives in the nav UI.
 
@@ -32,4 +32,8 @@ Sign-in and sign-up are simulated. `src/data/users.ts` holds an in-memory studen
 
 ## Enrollment
 
-A free course (`price === 0`) shows an enroll control. That control reads the session cookie inside `<Suspense>`, so the rest of the course page can still prerender. Signed out, it links to sign-in. Signed in, `enrollFree` writes `{ userId, courseSlug }` to `src/data/enrollments.ts` and redirects to `/dashboard`. Paid courses are unchanged. Rows are process memory, not part of the cookie; a restart clears them. My learning lists the joined catalog records for the cookie's student id, with an empty state when there are none. That segment has its own loading and error UI. The header account landmark links there when a session is open.
+A free course (`price === 0`) shows an enroll control. That control reads the session cookie inside `<Suspense>`, so the rest of the course page can still prerender. Signed out, it links to sign-in. Signed in, `enrollFree` writes `{ userId, courseSlug }` to `src/data/enrollments.ts` and redirects to `/dashboard`. Paid courses use demo checkout instead of `enrollFree`. Rows are process memory, not part of the cookie; a restart clears them. My learning lists the joined catalog records for the cookie's student id, with an empty state when there are none. That segment has its own loading and error UI. The header account landmark links there when a session is open.
+
+## Checkout
+
+A paid course (`price > 0`) offers demo checkout from the same kind of suspended session read. `startCheckout` writes `{ id, userId, courseSlug, amount, status }` to `src/data/checkouts.ts` and redirects to `/checkout/{id}`. Completing an open session enrolls the student and opens `/checkout/success`. Canceling opens `/checkout/cancel`. No card field is rendered, and nothing is charged. An open session is reused only while its amount still matches the course. Rows are process memory, not part of the cookie. `/checkout` is a private prefix, so the session, success, and cancel pages require a signed-in student. Success and cancel are static segments, so `[sessionId]` does not capture them. Those segments have their own loading and error UI. An unknown session calls `notFound()`.

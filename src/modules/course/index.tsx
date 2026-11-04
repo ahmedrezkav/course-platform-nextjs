@@ -5,6 +5,7 @@ import { paths } from "@/paths";
 import { getFormatter, getLocale, getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import { EnrollFallback, EnrollSlot } from "./enroll";
+import { PurchaseFallback, PurchaseSlot } from "./purchase";
 import { CourseJsonLd } from "./json-ld";
 
 export default async function CourseDetail({ course }: { course: Course }) {
@@ -51,7 +52,7 @@ export default async function CourseDetail({ course }: { course: Course }) {
         <p className="mt-4 text-sm text-muted">
           {t("course.taughtBy", { name: course.instructorName[locale] })}
         </p>
-        {/* Store prices are numbers with no currency. USD is display-only until checkout. */}
+        {/* Store prices are numbers with no currency. USD is display-only; checkout does not charge a card. */}
         <p className="mt-3 text-lg font-medium">
           {course.price === 0 ? (
             t("course.free")
@@ -65,7 +66,11 @@ export default async function CourseDetail({ course }: { course: Course }) {
           <Suspense fallback={<EnrollFallback label={t("loading.label")} />}>
             <EnrollSlot slug={course.slug} />
           </Suspense>
-        ) : null}
+        ) : (
+          <Suspense fallback={<PurchaseFallback label={t("loading.label")} />}>
+            <PurchaseSlot slug={course.slug} />
+          </Suspense>
+        )}
       </article>
       <section className="mt-12 max-w-3xl" aria-labelledby="syllabus-heading">
         <h2 id="syllabus-heading" className="text-2xl font-semibold tracking-tight">

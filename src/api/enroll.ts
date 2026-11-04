@@ -40,7 +40,7 @@ export async function enrollFree(formData: FormData) {
   if (!slug) return;
 
   const course = await getCourseBySlug(slug);
-  // Paid courses are not free enrollments. Checkout is a later phase.
+  // Paid courses go through demo checkout, not this action.
   if (!course || course.price !== 0) return;
 
   addEnrollment(session.id, course.slug);

@@ -33,7 +33,7 @@ export async function CourseCard({ course }: { course: Course }) {
       <p className="mt-4 text-sm text-muted">
         {t("taughtBy", { name: course.instructorName[locale] })}
       </p>
-      {/* Store prices are numbers with no currency. USD is display-only until checkout. */}
+      {/* Store prices are numbers with no currency. USD is display-only; checkout does not charge a card. */}
       <p className="mt-3 font-medium">
         {course.price === 0 ? (
           t("free")
