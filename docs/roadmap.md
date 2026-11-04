@@ -11,11 +11,11 @@ Implement **one phase per request**. Loading, error, empty, and pending UI ship 
 | 3 Home          | Marketing landing, featured courses, home `loading.tsx` / `error.tsx` — [detailed plan](phase-03-home.md)                                   |
 | 4 Catalog       | Listing, URL filters, empty/no-results, `loading.tsx` / `error.tsx` — [detailed plan](phase-04-catalog.md)                                  |
 | 5 Course detail | Syllabus, metadata, JSON-LD, `loading.tsx` / `error.tsx` / `not-found` — [detailed plan](phase-05-course-detail.md)                         |
-| 6 Auth          | Simulated session, proxy guards, accessible forms with pending/errors — [detailed plan](phase-06-auth.md)                                    |
-| 7 Enrollment    | Free enroll, My learning dashboard, dashboard loading/error/empty — [detailed plan](phase-07-enrollment.md)                                  |
-| 8 Demo payments | Checkout session, success/cancel, no real charges or card fields — [detailed plan](phase-08-demo-payments.md)                                 |
-| 9 Player        | HTML5 video + articles, progress, lesson loading/error/`not-found` — [detailed plan](phase-09-player.md)                                      |
+| 6 Auth          | Simulated session, proxy guards, accessible forms with pending/errors — [detailed plan](phase-06-auth.md)                                   |
+| 7 Enrollment    | Free enroll, My learning dashboard, dashboard loading/error/empty — [detailed plan](phase-07-enrollment.md)                                 |
+| 8 Demo payments | Checkout session, success/cancel, no real charges or card fields — [detailed plan](phase-08-demo-payments.md)                               |
+| 9 Player        | HTML5 video + articles, progress, lesson loading/error/`not-found` — [detailed plan](phase-09-player.md)                                    |
 | 10 Reviews      | List + submit with pending and inline errors — [detailed plan](phase-10-reviews.md)                                                         |
-| 11 Polish       | A11y/performance QA, leftover UX — not missing loading/error UI — [detailed plan](phase-11-polish.md)                                        |
+| 11 Polish       | A11y/performance QA, leftover UX — not missing loading/error UI — [detailed plan](phase-11-polish.md)                                       |
 
 Out of scope for now: instructor CMS, live Stripe, real backend, tests.
