@@ -97,7 +97,9 @@
     "enrollPending": "جارٍ الالتحاق",
     "enrollSignIn": "تسجيل الدخول للالتحاق",
     "enrolled": "تم الالتحاق بهذه الدورة.",
-    "dashboard": "عرض تعلّمي"
+    "dashboard": "عرض تعلّمي",
+    "continue": "متابعة التعلّم",
+    "progress": "اكتمل {completed, number} من {total, plural, zero {# درس} one {درس واحد} two {درسين} few {# دروس} many {# درس} other {# درس}}"
   },
   "checkout": {
     "title": "إتمام الشراء",
@@ -124,6 +126,24 @@
     "notFound": {
       "title": "إتمام الشراء غير موجود",
       "description": "عملية الشراء هذه غير موجودة على Vela.",
+      "courses": "تصفّح الدورات"
+    }
+  },
+  "player": {
+    "backToCourse": "العودة إلى الدورة",
+    "outline": "الدروس",
+    "previous": "الدرس السابق",
+    "next": "الدرس التالي",
+    "position": "الدرس {index, number} من {total, number}",
+    "complete": "وضع علامة مكتمل",
+    "completePending": "جارٍ الحفظ",
+    "completed": "مكتمل",
+    "locked": "التحق بهذه الدورة لفتح هذا الدرس.",
+    "captions": "ترجمة مصاحبة",
+    "videoUnsupported": "هذا المتصفح لا يستطيع تشغيل الفيديو.",
+    "notFound": {
+      "title": "الدرس غير موجود",
+      "description": "هذا الدرس غير موجود على Vela.",
       "courses": "تصفّح الدورات"
     }
   },

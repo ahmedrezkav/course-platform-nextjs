@@ -2,6 +2,7 @@ import { getEnrollmentState } from "@/api/enrollments";
 import { Link } from "@/i18n/navigation";
 import { paths } from "@/paths";
 import { getTranslations } from "next-intl/server";
+import { EnrolledActions } from "./enrolled";
 import { PurchaseForm } from "./purchase-form";
 
 // This child reads the session cookie. The course page wraps it in Suspense
@@ -10,14 +11,7 @@ export async function PurchaseSlot({ slug }: { slug: string }) {
   const [t, state] = await Promise.all([getTranslations(), getEnrollmentState(slug)]);
 
   if (state === "enrolled") {
-    return (
-      <div className="mt-6">
-        <p className="font-medium">{t("learning.enrolled")}</p>
-        <Link href={paths.dashboard()} className="mt-2 inline-block text-sm text-primary">
-          {t("learning.dashboard")}
-        </Link>
-      </div>
-    );
+    return <EnrolledActions slug={slug} />;
   }
 
   return (

@@ -8,9 +8,21 @@ export function LearningSkeleton({ heading = false }: { heading?: boolean }) {
         </>
       ) : null}
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="h-52 animate-pulse rounded-sm bg-border" />
-        <div className="h-52 animate-pulse rounded-sm bg-border" />
-        <div className="h-52 animate-pulse rounded-sm bg-border" />
+        <div>
+          <div className="h-52 animate-pulse rounded-sm bg-border" />
+          <div className="mt-3 h-4 w-36 animate-pulse rounded-sm bg-border" />
+          <div className="mt-2 h-4 w-28 animate-pulse rounded-sm bg-border" />
+        </div>
+        <div>
+          <div className="h-52 animate-pulse rounded-sm bg-border" />
+          <div className="mt-3 h-4 w-36 animate-pulse rounded-sm bg-border" />
+          <div className="mt-2 h-4 w-28 animate-pulse rounded-sm bg-border" />
+        </div>
+        <div>
+          <div className="h-52 animate-pulse rounded-sm bg-border" />
+          <div className="mt-3 h-4 w-36 animate-pulse rounded-sm bg-border" />
+          <div className="mt-2 h-4 w-28 animate-pulse rounded-sm bg-border" />
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { getMyCourses } from "@/api/enrollments";
+import { getProgressForCourses } from "@/api/progress";
 import { getSession } from "@/api/session";
 import { CourseCard } from "@/components/course-card";
 import { Link, redirect } from "@/i18n/navigation";
@@ -50,15 +51,36 @@ async function LearningList() {
     );
   }
 
+  const progressByCourse = await getProgressForCourses(courses);
+
   return (
     <>
       <p className="mt-4 text-sm text-muted">{t("count", { count: courses.length })}</p>
       <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {courses.map((course) => (
-          <li key={course.slug}>
-            <CourseCard course={course} />
-          </li>
-        ))}
+        {courses.map((course) => {
+          const progress = progressByCourse.get(course.slug);
+
+          return (
+            <li key={course.slug}>
+              <CourseCard course={course} />
+              {progress && progress.total > 0 ? (
+                <div className="mt-3">
+                  <p className="text-sm text-muted">
+                    {t("progress", { completed: progress.completed, total: progress.total })}
+                  </p>
+                  {progress.resumeSlug ? (
+                    <Link
+                      href={paths.learn(course.slug, progress.resumeSlug)}
+                      className="mt-1 inline-block text-sm text-primary"
+                    >
+                      {t("continue")}
+                    </Link>
+                  ) : null}
+                </div>
+              ) : null}
+            </li>
+          );
+        })}
       </ul>
     </>
   );
