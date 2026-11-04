@@ -97,7 +97,9 @@
     "enrollPending": "Enrolling",
     "enrollSignIn": "Sign in to enroll",
     "enrolled": "You're enrolled.",
-    "dashboard": "Go to My learning"
+    "dashboard": "Go to My learning",
+    "continue": "Continue learning",
+    "progress": "{completed, number} of {total, plural, one {# lesson} other {# lessons}} complete"
   },
   "checkout": {
     "title": "Checkout",
@@ -124,6 +126,24 @@
     "notFound": {
       "title": "Checkout not found",
       "description": "That checkout doesn't exist on Vela.",
+      "courses": "Browse courses"
+    }
+  },
+  "player": {
+    "backToCourse": "Back to course",
+    "outline": "Lessons",
+    "previous": "Previous",
+    "next": "Next",
+    "position": "Lesson {index, number} of {total, number}",
+    "complete": "Mark complete",
+    "completePending": "Saving",
+    "completed": "Completed",
+    "locked": "Enroll in this course to open this lesson.",
+    "captions": "Captions",
+    "videoUnsupported": "This browser can't play the video.",
+    "notFound": {
+      "title": "Lesson not found",
+      "description": "That lesson doesn't exist on Vela.",
       "courses": "Browse courses"
     }
   },
