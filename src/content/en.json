@@ -89,7 +89,7 @@
   },
   "learning": {
     "title": "My learning",
-    "intro": "Free courses you enroll in show up here.",
+    "intro": "Courses you enroll in show up here.",
     "count": "{count, plural, one {# course} other {# courses}}",
     "empty": "You haven't enrolled in a course yet.",
     "browse": "Browse courses",
@@ -98,6 +98,34 @@
     "enrollSignIn": "Sign in to enroll",
     "enrolled": "You're enrolled.",
     "dashboard": "Go to My learning"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "intro": "This is a demo checkout. No card is collected and nothing is charged.",
+    "buy": "Buy this course",
+    "buyPending": "Starting checkout",
+    "signIn": "Sign in to buy",
+    "total": "Total",
+    "pay": "Complete demo purchase",
+    "payPending": "Completing purchase",
+    "cancel": "Cancel checkout",
+    "cancelPending": "Canceling",
+    "paid": "This purchase is already complete.",
+    "canceled": "This checkout was canceled.",
+    "successTitle": "Purchase complete",
+    "successIntro": "You're enrolled. No charge was made.",
+    "incomplete": "This purchase isn't complete yet.",
+    "return": "Return to checkout",
+    "cancelTitle": "Checkout canceled",
+    "cancelIntro": "No charge was made.",
+    "unavailableTitle": "Order unavailable",
+    "unavailable": "That order isn't available.",
+    "backToCourse": "Back to course",
+    "notFound": {
+      "title": "Checkout not found",
+      "description": "That checkout doesn't exist on Vela.",
+      "courses": "Browse courses"
+    }
   },
   "languageSwitcher": {
     "label": "Language",
