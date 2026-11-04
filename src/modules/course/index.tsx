@@ -5,8 +5,8 @@ import { paths } from "@/paths";
 import { getFormatter, getLocale, getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import { EnrollFallback, EnrollSlot } from "./enroll";
-import { PurchaseFallback, PurchaseSlot } from "./purchase";
 import { CourseJsonLd } from "./json-ld";
+import { PurchaseFallback, PurchaseSlot } from "./purchase";
 
 export default async function CourseDetail({ course }: { course: Course }) {
   const t = await getTranslations();
@@ -93,11 +93,17 @@ export default async function CourseDetail({ course }: { course: Course }) {
                   <h3 id={`module-${module.slug}`} className="text-lg font-semibold">
                     {module.title[locale]}
                   </h3>
+                  {/* Titles open the player. The lesson body stays behind enrollment. */}
                   <ol className="mt-3 list-decimal ps-5">
                     {module.lessons.map((lesson) => (
                       <li key={lesson.slug} className="border-t border-border py-3">
                         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                          <span className="font-medium">{lesson.title[locale]}</span>
+                          <Link
+                            href={paths.learn(course.slug, lesson.slug)}
+                            className="font-medium hover:text-primary"
+                          >
+                            {lesson.title[locale]}
+                          </Link>
                           <span className="text-sm text-muted">
                             <span>{t(`course.type.${lesson.type}`)}</span>
                             <span aria-hidden className="px-1">

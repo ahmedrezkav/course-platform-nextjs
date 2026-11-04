@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { paths } from "@/paths";
 import { getTranslations } from "next-intl/server";
 import { EnrollForm } from "./enroll-form";
+import { EnrolledActions } from "./enrolled";
 
 // This child reads the session cookie. The course page wraps it in Suspense
 // so the syllabus can still prerender.
@@ -21,14 +22,7 @@ export async function EnrollSlot({ slug }: { slug: string }) {
   }
 
   if (state === "enrolled") {
-    return (
-      <div className="mt-6">
-        <p className="font-medium">{t("enrolled")}</p>
-        <Link href={paths.dashboard()} className="mt-2 inline-block text-sm text-primary">
-          {t("dashboard")}
-        </Link>
-      </div>
-    );
+    return <EnrolledActions slug={slug} />;
   }
 
   return <EnrollForm slug={slug} />;
