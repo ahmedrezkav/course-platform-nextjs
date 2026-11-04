@@ -19,6 +19,14 @@ export function CourseSkeleton() {
       <div className="mt-8 h-6 w-40 animate-pulse rounded-sm bg-border" />
       <div className="mt-3 h-12 w-full animate-pulse rounded-sm bg-border" />
       <div className="mt-2 h-12 w-full animate-pulse rounded-sm bg-border" />
+      <div className="mt-12 h-8 w-32 animate-pulse rounded-sm bg-border" />
+      <div className="mt-4 h-4 w-56 animate-pulse rounded-sm bg-border" />
+      <div className="mt-6 h-20 w-full animate-pulse rounded-sm bg-border" />
+      <div className="mt-4 h-20 w-full animate-pulse rounded-sm bg-border" />
+      <div className="mt-8 h-6 w-36 animate-pulse rounded-sm bg-border" />
+      <div className="mt-4 h-10 w-full animate-pulse rounded-sm bg-border" />
+      <div className="mt-3 h-24 w-full animate-pulse rounded-sm bg-border" />
+      <div className="mt-3 h-10 w-36 animate-pulse rounded-sm bg-border" />
     </div>
   );
 }
